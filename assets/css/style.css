@@ -181,7 +181,7 @@ body.lock {
   bottom: 0;
   right: 0;
   width: 790px;
-  transform: translateX(30%);
+  transform: translateX(23%);
   z-index: 3;
 }
 .hero__img::before {
