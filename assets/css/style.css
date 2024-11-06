@@ -78,7 +78,7 @@ body.lock {
   top: 0;
   width: 100%;
   padding: 36px 0 20px;
-  z-index: 5;
+  z-index: 6;
 }
 
 .header__body {
@@ -109,6 +109,7 @@ body.lock {
 .hero {
   z-index: 5;
   position: relative;
+  height: 100vh;
 }
 
 .main__bg {
@@ -119,12 +120,12 @@ body.lock {
   z-index: 1;
 }
 .main__bg img {
-  max-height: 870px;
+  height: 100vh;
 }
 
 .hero__body {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   align-items: center;
   padding-top: 16%;
@@ -133,6 +134,7 @@ body.lock {
 .hero__left {
   color: #fff;
   max-width: 538px;
+  z-index: 2;
 }
 .hero__left .hero__title {
   font-size: 64px;
@@ -176,10 +178,11 @@ body.lock {
 
 .hero__img {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   width: 790px;
   transform: translateX(30%);
+  z-index: 3;
 }
 .hero__img::before {
   content: "";
@@ -196,4 +199,13 @@ body.lock {
 .hero__img .img__balance {
   position: relative;
   max-width: 660px;
+}
+
+@media screen and (max-width: 960px) {
+  .hero__img {
+    display: none;
+  }
+  .hero__body {
+    padding-top: 30%;
+  }
 }/*# sourceMappingURL=style.css.map */
