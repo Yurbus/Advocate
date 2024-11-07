@@ -16,7 +16,7 @@
 <body>
 	<div class="wrapper">
 		<!-- /////////////////////////------- Header --------/////////////////////////////// -->
-		<header class="header">
+		<header class="header" id="stickyMenu">
 			<div class="header__container">
 				<div class="header__body">
 					<div class="header__logo">
@@ -24,9 +24,9 @@
 					</div> 
 					<div class="header__menu">
 						<ul class="menu__list">
-							<li class="menu__link"><a href="">Про нас</a> </li>
-							<li class="menu__link"><a href="">Послуги</a></li> 
-							<li class="menu__link"><a href="">Контакти</a></li> 
+							<li class="menu__link"><a  class="link__scroll" data-goto=".page__section_1" href="">Про нас</a> </li>
+							<li class="menu__link"><a  class="link__scroll" data-goto=".page__section_2" href="">Послуги</a></li> 
+							<li class="menu__link"><a  class="link__scroll" data-goto=".page__section_3" href="">Контакти</a></li> 
 						</ul>
 					</div>
 				</div>
@@ -57,17 +57,83 @@
 				</div>
 			</section>
 
-			<section class="about">
+			<section class="about page__section_1">
 				<div class="about__container">
 					<div class="about__body">
 						<div class="about__text">
-							<h2 class="about__title">Ботвінов Ростислав Геннадійович</h2>
+							<h2 class="about__title h2__title">Ботвінов Ростислав Геннадійович</h2>
 							<p class="about__descr">Ботвинов Ростислав Геннадійович — досвідчений юрист та науковець, спеціаліст 
 								у сфері правознавства та громадьский діяч. Має значний практичний досвід у правовій діяльності.
 							</p>
 						</div>
 						<div class="about__photo">
 							<img src="assets/img/my-photo.jpg" alt="photo">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="bio">
+				<div class="bio__container">
+					<div class="bio__body">
+						<h2 class="bio__title h2__title">Біографія</h2>
+						<div class="bio__content">
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="bio">
+				<div class="bio__container">
+					<div class="bio__body">
+						<h2 class="bio__title h2__title">Наукова діяльність</h2>
+						<div class="bio__content">
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="directions page__section_2">
+				<div class="directions__container">
+					<div class="directions__body">
+						<div class="directions__title-block">
+							<h2 class="directions__title h2__title">Напрямки</h2>
+							<span class="directions__text">
+								Ми пропонуємо широкий спектр юридичних послуг, включаючи захист у кримінальних 
+								справах, питання сімейного права та допомогу в корпоративних спорах. Незалежно 
+								від складності вашої ситуації, ми знайдемо рішення.
+							</span>
+						</div>
+						<div class="directions__cards">
+							<div class="card__dir">
+								<img src="assets/img/card_1.jpg" alt="image">
+								<h3 class="card__title">КРИМІНАЛЬНЕ ЗАКОНОДАВСТВО</h3>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
+									Ipsum has been the industry's standard dummy text ever since the 1500s,
+								</p>
+							</div>
+							<div class="card__dir">
+								<img src="assets/img/card_2.jpg" alt="image">
+								<h3 class="card__title">ПОДАТКОВЕ ЗАКОНОДАВСТВО</h3>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
+									Ipsum has been the industry's standard dummy text ever since the 1500s, ever since the 1500s.
+								</p>
+							</div>
+							<div class="card__dir">
+								<img src="assets/img/card_3.jpg" alt="image">
+								<h3 class="card__title">ВІЙСЬКОВЕ ЗАКОНОДАВСТВО</h3>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
+									Ipsum has been the industry's standard dummy text ever.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

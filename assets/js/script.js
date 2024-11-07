@@ -29,7 +29,7 @@ const isMobile = {
 
 // Меню бурнер
 const iconMenu = document.querySelector('.menu__icon');
-const menuBody = document.querySelector('.header__right');
+const menuBody = document.querySelector('.header__menu');
 if (iconMenu) {
 	iconMenu.addEventListener("click", function (e) {
 		document.body.classList.toggle('_lock');
@@ -41,78 +41,74 @@ if (iconMenu) {
 // -----------------------------------------------------------
 
  // Функция для прокрутки страницы вверх
- function scrollToTop() {
-    // Прокручиваем страницу в начало с плавной анимацией
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
+//  function scrollToTop() {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     });
+// }
 
 // Получаем кнопку для прокрутки вверх
-var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+// var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Добавляем обработчик события клика на кнопку
-scrollToTopBtn.addEventListener("click", scrollToTop);
+// scrollToTopBtn.addEventListener("click", scrollToTop);
 
-// Отслеживаем прокрутку страницы
-window.onscroll = function() {
-    // Если прокрутка больше 500px, показываем кнопку, иначе скрываем
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-};
+// window.onscroll = function() {
+//     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+//         scrollToTopBtn.style.display = "block";
+//     } else {
+//         scrollToTopBtn.style.display = "none";
+//     }
+// };
 
 
 
 // -----------------------------------------------------------
 // Получаем элемент липкого меню
-// const stickyMenu = document.getElementById('stickyMenu');
+const stickyMenu = document.getElementById('stickyMenu');
 
-// // Получаем позицию меню относительно верхней границы страницы
-// const stickyMenuOffset = stickyMenu.offsetTop;
+// Получаем позицию меню относительно верхней границы страницы
+const stickyMenuOffset = stickyMenu.offsetTop;
 
-// // Функция для добавления класса при прокрутке
-// function handleScroll() {
-//     if (window.pageYOffset >= stickyMenuOffset) {
-//         stickyMenu.classList.add('sticky');
-//     } else {
-//         stickyMenu.classList.remove('sticky');
-//     }
-// }
-// // Слушаем событие прокрутки и вызываем функцию handleScroll
-// window.addEventListener('scroll', handleScroll);
+// Функция для добавления класса при прокрутке
+function handleScroll() {
+    if (window.pageYOffset >= stickyMenuOffset) {
+        stickyMenu.classList.add('sticky');
+    } else {
+        stickyMenu.classList.remove('sticky');
+    }
+}
+// Слушаем событие прокрутки и вызываем функцию handleScroll
+window.addEventListener('scroll', handleScroll);
 
 
 // Прокрутка при клике
-// const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-// if(menuLinks.length > 0) {
-// 	menuLinks.forEach(menuLink => {
-// 		menuLink.addEventListener("click", onMenuLinkClick);
-// 	});
+const menuLinks = document.querySelectorAll('.link__scroll[data-goto]');
+if(menuLinks.length > 0) {
+	menuLinks.forEach(menuLink => {
+		menuLink.addEventListener("click", onMenuLinkClick);
+	});
 
-// 	function onMenuLinkClick(e) {
-// 		const menuLink = e.target;
-// 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-// 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
-// 			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+	function onMenuLinkClick(e) {
+		const menuLink = e.target;
+		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+			const gotoBlock = document.querySelector(menuLink.dataset.goto);
+			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
 		
-// 			if (iconMenu.classList.contains('_active')) {
-// 				document.body.classList.remove('_lock');
-// 				iconMenu.classList.remove('_active');
-// 				menuBody.classList.remove('_active');
-// 			}
+			if (iconMenu.classList.contains('_active')) {
+				document.body.classList.remove('_lock');
+				iconMenu.classList.remove('_active');
+				menuBody.classList.remove('_active');
+			}
 
-// 			window.scrollTo({
-// 				top: gotoBlockValue,
-// 				behavior: "smooth"
-// 			});
-// 			e.preventDefault();
-// 		}
-// 	}
-// }
+			window.scrollTo({
+				top: gotoBlockValue,
+				behavior: "smooth"
+			});
+			e.preventDefault();
+		}
+	}
+}
 
 
 //прикрепление файла в форме
