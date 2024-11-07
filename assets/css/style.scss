@@ -133,13 +133,13 @@ body.lock {
 	max-width: 538px;
 	z-index: 2;
 	.hero__title {
-		font-size: 64px;
+		font-size: clamp(28px, 4vw, 64px);
 		font-weight: 700;
 		text-transform: uppercase;
 		margin-bottom: 10px;
 	}
 	.hero__sub-title {
-		font-size: 24px;
+		font-size:  clamp(18px, 4vw, 24px);
 		font-weight: 600;
 		text-transform: uppercase;
 		margin-bottom: 24px;
@@ -174,7 +174,7 @@ body.lock {
 
 .hero__img {
 	position: absolute;
-	bottom: 0;
+	bottom: -75px;
 	right: 0;
 	width: 790px;
 	transform: translateX(23%);
@@ -184,8 +184,8 @@ body.lock {
 		position: absolute;
 		display: block;
 		background: #000;
-		width: 740px;
-		height: 740px;
+		width: 725px;
+		height: 725px;
 		border-radius: 50%;
 		top: 30px;
 		right: 0;
@@ -199,7 +199,7 @@ body.lock {
 	}
 	.img__balance {
 		position: relative;
-		max-width: 660px;
+		max-width: 600px;
 	}
 }
 
@@ -211,6 +211,16 @@ body.lock {
 		display: none;
 	}
 	.hero__body {
-		padding-top: 30%;
+		padding-top: 54%;
+	}
+	.hero__left {
+		width: 100%;
+	}
+}
+
+
+@media screen and (max-width:480px) {
+	.hero__buttons {
+		grid-template-columns: 1fr;
 	}
 }
