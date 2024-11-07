@@ -295,6 +295,61 @@ body.lock {
 	}
 }
 	
+/*---------- directions section -----------------------*/
+
+.donate {
+	padding: 100px 0;
+}
+.donate__body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.donate__left {
+		.donate__title {
+		}
+		.donate__button {
+			display: inline-block;
+			font-size: 16px;
+			font-weight: 700;
+			padding: 21px 75px;
+			text-align: center;
+			background: #000;
+			color: #fff;
+			margin-top: 24px;
+		}
+	}
+	.donate__right {
+		img {
+
+		}
+	}
+}
+
+.footer {
+	background: #000;
+	padding: 100px 0;
+}
+.footer__body {
+	color: #fff;
+	.footer__callback {
+	}
+	.footer__contacts {
+	}
+	.footer__title {
+	}
+	.h2__title {
+	}
+	.phones {
+	}
+	.phone_1 {
+	}
+	.phone_2 {
+	}
+	.email {
+	}
+	.footer__form {
+	}
+}
 
 
 
@@ -416,6 +471,12 @@ body.lock {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 50px;
+	}
+	.donate__body {
+		flex-wrap: wrap;
+		.donate__right{
+			margin-top: 30px;
+		}
 	}
 
 }

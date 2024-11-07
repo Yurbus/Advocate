@@ -284,6 +284,34 @@ body.lock {
   font-weight: 400;
 }
 
+/*---------- directions section -----------------------*/
+.donate {
+  padding: 100px 0;
+}
+
+.donate__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.donate__body .donate__left .donate__button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 21px 75px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  margin-top: 24px;
+}
+.footer {
+  background: #000;
+  padding: 100px 0;
+}
+
+.footer__body {
+  color: #fff;
+}
 /*===============================================================================*/
 /*======================== Media queries ========================================*/
 /*===============================================================================*/
@@ -395,6 +423,12 @@ body.lock {
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+  .donate__body {
+    flex-wrap: wrap;
+  }
+  .donate__body .donate__right {
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 480px) {
