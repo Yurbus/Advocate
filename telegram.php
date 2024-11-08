@@ -1,20 +1,20 @@
+
+<?php
 /*Скрипт положить в function.php в теме WP*/
 
 add_action("wpcf7_mail_sent", "wpcf7_do_something");
 	function wpcf7_do_something($cf7) {
 		$wpcf = WPCF7_ContactForm::get_current();
 		//Здесь скрипт отправки в телеграмм.
-		$name = $_POST['your-name'];
-		$phone = $_POST['your-phone'];
-		$email = $_POST['your-mail'];
-		$massage = $_POST['massage'];
-		$token = "878137863:AAETXKS8myXMSTsP7rxnQK_Hz52ckd5Ljos";
-		$chat_id = "-380742184";
+		$name = $_POST['name'];
+		$phone = $_POST['phone'];
+		$question = $_POST['question'];
+		$token = "";
+		$chat_id = "";
 		$arr = array(
-		  'Имя пользователя: ' => $name,
-		  'Телефон: ' => $phone,
-		  'E-mail: ' => $mail,
-		  'Сообщение: ' => $message,
+			'Імя: ' => $name,
+			'Телефон: ' => $phone,
+			'Питання: ' => $question,
 		);
 
 		$txt .= "<b>".$name."</b>".$phone."%0A";
