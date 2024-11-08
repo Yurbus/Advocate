@@ -310,6 +310,7 @@ body.lock {
 .footer {
   background: #000;
   padding: 100px 0;
+  overflow: hidden;
 }
 
 .footer__body {
