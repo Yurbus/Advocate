@@ -414,6 +414,9 @@ body.lock {
   background: #FFF;
   color: #000;
 }
+.footer__body .footer__callback .footer__form #formResponse {
+  margin-top: 30px;
+}
 
 /*===============================================================================*/
 /*======================== Media queries ========================================*/

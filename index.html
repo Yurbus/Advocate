@@ -173,9 +173,9 @@
 							<a href="mailto:adbovocat24@gmail.com" class="phones email">adbovocat24@gmail.com</a>
 						</div>
 						<div class="footer__form">
-							<form class="form" action="">			
-								<input type="text" class="input_form _req" name="name" placeholder="Ім'я:">
-								<input type="tel" class="input_form _req" name="phome" placeholder="Номер телефону:">
+							<form class="form" id="contactForm" action="">			
+								<input type="text" class="input_form _req" name="name" placeholder="Ім'я:" required>
+								<input type="tel" class="input_form _req" name="phome" placeholder="Номер телефону:" required>
 								<input type="text" class="input_form _req" name="question" placeholder="Ваше питання?">
 
 								<div class="policy__check">
@@ -184,6 +184,7 @@
 								</div>
 								<button type="submit" class="contact__btn">Замовити консультацію</button>
 							</form>
+							<div id="formResponse"></div>
 						</div>
 					</div>
 				</div>
