@@ -45,6 +45,10 @@ body {
   height: 100%;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body._lock {
   overflow: hidden;
 }
@@ -534,11 +538,13 @@ body.lock {
     gap: 50px;
   }
   .footer__body .white__left {
+    width: 127%;
     height: 144%;
     left: 9%;
     top: -92px;
   }
   .footer__body .white__right {
+    width: 127%;
     height: 144%;
     right: -78px;
     top: 215px;

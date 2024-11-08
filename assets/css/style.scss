@@ -43,6 +43,9 @@ body {
 	color: #000000;
 	height: 100%;
 }
+html {
+	overflow-x: hidden;
+}
 
 body._lock {
 	overflow: hidden;
@@ -63,7 +66,6 @@ body.lock {
 	margin: 0 auto;
 	padding: 0 10px;
 }
-
 .page {
 	flex: 1 1 auto;
 	padding-top: 80px;
@@ -568,11 +570,13 @@ body.lock {
 			gap: 50px;
 		}
 		.white__left {
+			width: 127%;
 			height: 144%;
 			left: 9%;
 			top: -92px;
 		}
 		.white__right {
+			width: 127%;
 			height: 144%;
 			right: -78px;
 			top: 215px;
