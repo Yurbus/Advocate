@@ -268,7 +268,7 @@ body.lock {
 		grid-template-columns: 1fr 1fr;
 		align-items: start;
 		.directions__text {
-			font-weight: 600;
+			font-weight: 400;
 			font-size: clamp(14px, 2vw, 18px);
 			line-height: 130%;
 		}
@@ -595,6 +595,12 @@ body.lock {
 	}
 	.donate__body {
 		flex-wrap: wrap;
+		justify-content: center;
+		.donate__left {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
 		.donate__right{
 			margin-top: 30px;
 		}
@@ -625,7 +631,7 @@ body.lock {
         padding-top: 40%;
     }
 	.hero__buttons {
-        margin-top: 93%;
+        margin-top: 85%;
     }
 	.hero__img {
 		bottom: 0;
