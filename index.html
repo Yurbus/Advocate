@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -20,7 +21,7 @@
 			<div class="header__container">
 				<div class="header__body">
 					<div class="header__logo">
-						<a href="index.html" class="header__logo-link">Логотип</a>
+						<a href="index.html" class="header__logo-link"><img src="assets/img/logo.svg" alt="logo"></a>
 					</div> 
 					<div class="header__menu">
 						<ul class="menu__list">
@@ -78,10 +79,13 @@
 					<div class="bio__body">
 						<h2 class="bio__title h2__title">Біографія</h2>
 						<div class="bio__content">
-							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
-							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
-							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
-							<a href="assets/img/doc.png"><img src="assets/img/doc.png" alt="document"></a>
+							<a href="assets/img/bio/diplom1.jpg"><img src="assets/img/bio/diplom1.jpg" alt="document"></a>
+							<a href="assets/img/bio/diplom2.jpg"><img src="assets/img/bio/diplom2.jpg" alt="document"></a>
+							<a href="assets/img/bio/diplom3.jpg"><img src="assets/img/bio/diplom3.jpg" alt="document"></a>
+							<a href="assets/img/bio/diplom4.jpg"><img src="assets/img/bio/diplom4.jpg" alt="document"></a>
+							<a href="assets/img/bio/diplom5.jpg"><img src="assets/img/bio/diplom5.jpg" alt="document"></a>
+							<a href="assets/img/bio/diplom6.jpg"><img src="assets/img/bio/diplom6.jpg" alt="document"></a>
+							<a href="assets/img/bio/diplom7.jpg"><img src="assets/img/bio/diplom7.jpg" alt="document"></a>
 						</div>
 					</div>
 				</div>
@@ -116,22 +120,23 @@
 							<div class="card__dir">
 								<img src="assets/img/card_1.jpg" alt="image">
 								<h3 class="card__title">КРИМІНАЛЬНЕ ЗАКОНОДАВСТВО</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-									Ipsum has been the industry's standard dummy text ever since the 1500s,
+								<p>Напрямок діяльності в кримінальному законодавстві спрямований на боротьбу з 
+									злочинністю, захист прав громадян та забезпечення справедливості через покарання 
+									правопорушників.
 								</p>
 							</div>
 							<div class="card__dir">
 								<img src="assets/img/card_2.jpg" alt="image">
 								<h3 class="card__title">ПОДАТКОВЕ ЗАКОНОДАВСТВО</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-									Ipsum has been the industry's standard dummy text ever since the 1500s, ever since the 1500s.
+								<p>Напрямок діяльності в податковому законодавстві спрямований на регулювання податкових 
+									відносин, забезпечення справедливого оподаткування та фінансової стабільності держави.
 								</p>
 							</div>
 							<div class="card__dir">
 								<img src="assets/img/card_3.jpg" alt="image">
 								<h3 class="card__title">ВІЙСЬКОВЕ ЗАКОНОДАВСТВО</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-									Ipsum has been the industry's standard dummy text ever.
+								<p>Напрямок діяльності в військовому законодавстві полягає в регулюванні прав і обов'язків 
+									військовослужбовців, забезпеченні національної безпеки та обороноздатності держави.
 								</p>
 							</div>
 						</div>
@@ -196,6 +201,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 	<script src="assets/js/script.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script>
+        $(".bio__content").magnificPopup({
+            delegate: "a",
+                type : 'image',
+                gallery : {
+                enabled : true
+            }
+            });
+    </script>
 </body>
 </html>
 
