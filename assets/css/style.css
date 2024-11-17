@@ -198,7 +198,7 @@ body.lock {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 790px;
+  width: 740px;
   transform: translateX(23%);
   z-index: 3;
 }
@@ -207,8 +207,8 @@ body.lock {
   position: absolute;
   display: block;
   background: #000;
-  width: 725px;
-  height: 725px;
+  width: 675px;
+  height: 675px;
   border-radius: 50%;
   top: 30px;
   right: 0;
@@ -216,7 +216,7 @@ body.lock {
 }
 .hero__img .img__balance {
   position: relative;
-  max-width: 600px;
+  max-width: 530px;
 }
 
 /*---------- about section -----------------------*/
@@ -630,5 +630,19 @@ body.lock {
   }
   .footer__body .footer__callback .footer__form .form .contact__btn {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .hero__img {
+    width: 340px;
+  }
+  .hero__img::before {
+    width: 338px;
+    height: 338px;
+  }
+}
+@media screen and (max-width: 393.98px) {
+  .hero__buttons {
+    margin-top: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
