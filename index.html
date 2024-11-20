@@ -79,9 +79,9 @@
 					<div class="bio__body">
 						<h2 class="bio__title h2__title">Біографія</h2>
 						<div class="bio__content">
-							<a target="_blank" href="assets/img/doc/Резюме_Ботвінов_Р_Г_2024_викладач_docx.pdf"><img src="assets/img/doc/cv.jpg" alt="document"></a>
-							<a target="_blank" href="assets/img/doc/Провадження Nº 11-кп80319324.pdf"><img src="assets/img/doc/doc1.jpg" alt="document"></a>
-							<a target="_blank" href="assets/img/doc/LL-бланк.pdf"><img src="assets/img/doc/ll.jpg" alt="document"></a>
+							<a target="_blank" href="assets/img/doc/cw.pdf"><img src="assets/img/doc/cv.jpg" alt="document"></a>
+							<a target="_blank" href="assets/img/doc/11.pdf"><img src="assets/img/doc/doc1.jpg" alt="document"></a>
+							<a target="_blank" href="assets/img/doc/LL-blank.pdf"><img src="assets/img/doc/ll.jpg" alt="document"></a>
 						</div>
 					</div>
 				</div>
@@ -210,6 +210,48 @@
             }
             });
     </script>
+	<script>
+		document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+        
+            const form = e.target;
+            const formData = new FormData(form);
+        
+            // Convert formData to JSON format
+            const formJson = {};
+            formData.forEach((value, key) => {
+                formJson[key] = value;
+            });
+        
+            // Sending the data
+            fetch('submit_form.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formJson),
+            })
+            .then(response => {
+                // Проверяем, корректен ли ответ
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Преобразуем ответ в JSON
+            })
+            .then(data => {
+                if (data.status === 'success') {
+                    document.getElementById('formResponse').innerHTML = `<p>Форма успішно надіслана!</p>`;
+                    form.reset();
+                } else {
+                    document.getElementById('formResponse').innerHTML = `<p>Щось пішло не так. Спробуйте пізніше.</p>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('formResponse').innerHTML = `<p>Виникла помилка. Спробуйте ще раз.</p>`;
+                console.error('Error:', error);
+            });
+        });
+	</script>
 </body>
 </html>
 

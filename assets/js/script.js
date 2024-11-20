@@ -118,8 +118,8 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
         let value = event.target.value.replace(/\D/g, '');
 
         // Проверяем, начинается ли номер с +380 и содержит ли 12 цифр
-        if (!value.startsWith("380")) {
-            value = "380" + value.slice(3);  // Принудительно добавляем "380" впереди, если его нет
+        if (!value.startsWith("38")) {
+            value = "38" + value.slice(3);  // Принудительно добавляем "380" впереди, если его нет
         }
         
         // Ограничиваем количество цифр после +380 до 9
@@ -135,50 +135,14 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
         const value = event.target.value;
         
         // Проверка на соответствие полному формату +380 и 9 цифр после него
-        const ukrainePhonePattern = /^\+380\d{9}$/;
+        const ukrainePhonePattern = /^\+38\d{10}$/;
         
         if (!ukrainePhonePattern.test(value)) {
-            alert("Пожалуйста, введите корректный номер телефона в формате +380XXXXXXXXX");
+            alert("Пожалуйста, введите корректный номер телефона в формате +38XXXXXXXXXX");
             event.target.value = ''; // Очищаем значение, если оно не соответствует формату
         }
     });
 });
-
-
-// Отправка формы
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
-    
-    const form = e.target;
-    const formData = new FormData(form);
-
-    // Convert formData to JSON format
-    const formJson = {};
-    formData.forEach((value, key) => {
-        formJson[key] = value;
-    });
-
-    // Sending the data
-    fetch('submit_form.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formJson),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Success message
-        document.getElementById('formResponse').innerHTML = `<p>Форма успішно надіслана!</p>`;
-        form.reset(); // Reset the form after submission
-    })
-    .catch(error => {
-        // Error message
-        document.getElementById('formResponse').innerHTML = `<p>Виникла помилка. Спробуйте ще раз.</p>`;
-        console.error('Error:', error);
-    });
-});
-
 
 //прикрепление файла в форме
 

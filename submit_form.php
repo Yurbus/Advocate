@@ -1,37 +1,40 @@
 <?php
-header("Content-Type: application/json");
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $data = json_decode(file_get_contents("php://input"), true);
-
-    if (isset($data['name']) && isset($data['phone']) && isset($data['policy'])) {
-        $name = htmlspecialchars($data['name']);
-        $phone = htmlspecialchars($data['phone']);
-        $question = isset($data['question']) ? htmlspecialchars($data['question']) : '';
-
-        // Укажите email получателя
-        $to = "frankins636@gmail.com"; // Замените на нужный email
-        $subject = "Новая заявка с формы сайта";
-        
-        // Текст письма
-        $message = "Имя: $name\n";
-        $message .= "Телефон: $phone\n";
-        $message .= "Вопрос: $question\n";
-
-        // Заголовки письма
-        $headers = "From: no-reply@yourwebsite.com\r\n";
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-        // Отправка email
-        if (mail($to, $subject, $message, $headers)) {
-            echo json_encode(["status" => "success", "message" => "Форма успешно отправлена."]);
+    header('Content-Type: application/json; charset=UTF-8');
+    header('Access-Control-Allow-Origin: *'); // Если нужно для CORS
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Получение JSON-данных из тела запроса
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+    
+        if ($data) {
+            $name = htmlspecialchars($data['name']);
+            $phone = htmlspecialchars($data['phone']);
+            $question = htmlspecialchars($data['question']);
+    
+            if (isset($data['policy'])) {
+                $to = "info@advocate.trainer.dp.ua"; 
+                $subject = "Новая заявка с сайта";
+                $message = "
+                    <h2>Нова заявка</h2>
+                    <p><strong>Ім'я:</strong> $name</p>
+                    <p><strong>Телефон:</strong> $phone</p>
+                    <p><strong>Питання:</strong> $question</p>
+                ";
+                $headers = "From: info@advocate.trainer.dp.ua\r\n";
+                $headers .= "MIME-Version: 1.0\r\n";
+                $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    
+                if (mail($to, $subject, $message, $headers)) {
+                    echo json_encode(['status' => 'success']);
+                } else {
+                    echo json_encode(['status' => 'error']);
+                }
+            } else {
+                echo json_encode(['status' => 'policy_not_checked']);
+            }
         } else {
-            echo json_encode(["status" => "error", "message" => "Не удалось отправить письмо. Попробуйте позже."]);
+            echo json_encode(['status' => 'invalid_data']);
         }
-    } else {
-        echo json_encode(["status" => "error", "message" => "Пожалуйста, заполните все обязательные поля."]);
     }
-} else {
-    echo json_encode(["status" => "error", "message" => "Неправильный метод запроса."]);
-}
 ?>
+
