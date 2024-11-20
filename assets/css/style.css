@@ -267,7 +267,7 @@ body.lock {
 }
 .directions__body .directions__title-block .directions__text {
   font-weight: 400;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 24px);
   line-height: 130%;
 }
 .directions__body .directions__cards {
